@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/931b25c3-641a-48fc-bcc8-2f31982e8618)# BoardLight
+# BoardLight
 
 ![image](https://github.com/user-attachments/assets/2b73bf05-62a1-4243-8386-b94047464da6)
 
@@ -14,7 +14,7 @@ As usually as usual, we start with **nmap**.
 
 Here we can see two ports, **http** (80) and **SSH** (22). Well, let's check website.
 
-# Checking HTTP (80 port)
+## Checking HTTP (80 port)
 
 ![image](https://github.com/user-attachments/assets/19c61d38-de44-45c2-a2ef-919c80781105)
 
@@ -87,7 +87,7 @@ nc -lvnp 9999
 
 Now, save it again and click on the binoculars and we get access to the server!.
 
-# Shell
+## Shell
 
 ![image](https://github.com/user-attachments/assets/791538f2-97cf-4cea-873c-d81609b06067)
 
@@ -125,6 +125,8 @@ so we entered as larissa.
 
  And here our ***user flag***. (and other people's exploits ;) )
 
+## Privilege Escalation
+ 
  ![image](https://github.com/user-attachments/assets/d273b685-0a62-4f24-9058-4ae85dbb241c)
 
 It's sad. But let's transfer our **lineass** to the server (I deleted all other people's files).
@@ -144,4 +146,18 @@ launch linpeas with `./linpeas.sh`.
 
 ![image](https://github.com/user-attachments/assets/6d87ffc0-0635-4f19-b7cd-4f056140663d)
 
+Hmm, let's check the version of **enlightenment**:
 
+![image](https://github.com/user-attachments/assets/843d4023-2344-4969-ae06-b766712d2fd6)
+
+![image](https://github.com/user-attachments/assets/617b5df8-4ec2-4dd3-b4f7-4aa4cb4d8e89)
+
+and this version is really vulnerable!
+
+download a **bash script**, getting root and root flag.
+
+## Conclusion
+
+**BoardLight** was my first machine that I hacked myself, so it was nice to remember and write an analysis about it. Unfortunately, I didn't finish the part about getting the root flag, because it finally retired. 
+
+Good luck! ;)
