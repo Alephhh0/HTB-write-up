@@ -43,3 +43,32 @@ And yes! That's it. I tried the standard login and password `admin:admin` and it
 ![image](https://github.com/user-attachments/assets/6d752c5a-23d4-4226-aa4c-1e3214cec510)
 
 The protection has worked, so we have limitations(
+
+The **websites** tab immediately catches your eye:
+
+![image](https://github.com/user-attachments/assets/4f0738ed-a0e1-4ecb-be16-bcaa40029dab)
+
+Here we can create our own website.
+
+![image](https://github.com/user-attachments/assets/42b0dc9d-7f76-4b5c-bc25-84b26a7209f1)
+
+I created some kind of random website. You can also edit the html code
+
+![image](https://github.com/user-attachments/assets/708ebb79-25ff-4806-b72e-7bde3a7c1e81)
+
+Let's write a simple PHP code for check:
+
+```
+<?PHP echo system("whoami");?>
+```
+
+![image](https://github.com/user-attachments/assets/174d5968-20c8-4cd8-bddf-9fbf957e3bca)
+
+Save and click on the binoculars icon to view our website.
+
+![image](https://github.com/user-attachments/assets/7f66eb6e-9593-405b-b6ea-3ef4afcae1e3)
+
+![image](https://github.com/user-attachments/assets/ec7829c6-b231-49f3-8ddf-984a1a9e03f4)
+
+And here is our vulnerability, the site has issued a response to the `whoami` command. Let's try to get **reverse shell**.
+
